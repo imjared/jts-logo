@@ -1,0 +1,25 @@
+{
+  "name": "mathsass",
+  "version": "0.9.2",
+  "homepage": "http://github.com/terkel/mathsass",
+  "main": "dist/math.scss",
+  "ignore": [
+    "test",
+    ".editorconfig",
+    ".gitattributes",
+    ".gitignore",
+    ".travis.yml",
+    "*.md",
+    "Gruntfile.coffee"
+  ],
+  "_release": "0.9.2",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.9.2",
+    "commit": "81eab5427b077739ee8e1f33a938cde759ad847f"
+  },
+  "_source": "git://github.com/terkel/mathsass.git",
+  "_target": "~0.9.2",
+  "_originalSource": "mathsass",
+  "_direct": true
+}

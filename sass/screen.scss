@@ -1,0 +1,78 @@
+@import "mathsass/dist/math.scss";
+
+$radius: 12px;
+$colors : (
+  1: #746f86,
+  2: #746f86,
+  3: #a16e8f,
+  4: #a16e8f,
+  5: #a9637b,
+  6: #a9637b,
+  7: #d27484,
+  8: #d27484,
+  9: #b76861,
+  10: #b76861,
+  11: #d57867,
+  12: #d57867,
+  13: #d5835b,
+  14: #d5835b
+);
+
+.container {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.bar {
+  background: #dad7c6;
+  width: 100%;
+  height: 100%;
+  margin: 0 1px;
+  border-radius: $radius;
+  position: relative;
+  // overflow: hidden;
+}
+
+.bar-inner {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  border-radius: $radius;
+  height: 0;
+  transition: height 0.8s ease-in-out;
+}
+
+@each $color, $barColor in $colors {
+    .color-#{$color} {
+      .is-active & {
+        .bar-inner {
+          background: $barColor;
+          // height: percentage($color / 14);
+          height: pow((2.42*$color), 1.5) * 1px;
+          transition-delay: ($color / 2) * 0.1s;
+        }
+      }
+    }
+}
+
+h1 {
+  text-align: center;
+  color: #746f86;
+  font-family: 'Source Sans Pro', 'sans-serif';
+  font-size: 30px;
+  margin: 0;
+  .the {
+    font-style: italic;
+    font-weight: 300;
+  }
+  span {
+    opacity: 0;
+    transition: opacity 0.8s;
+    .is-active & {
+      opacity: 1;
+      transition-delay: 1.5s;
+    }
+  }
+}
